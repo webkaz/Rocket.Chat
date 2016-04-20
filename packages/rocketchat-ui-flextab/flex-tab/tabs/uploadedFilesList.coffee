@@ -27,7 +27,7 @@ Template.uploadedFilesList.helpers
 		return RocketChat.authz.hasAtLeastOnePermission('delete-message', @rid) or RocketChat.settings.get('Message_AllowDeleting') and @userId is Meteor.userId()
 
 	url: ->
-		return '/rocket/file-upload/' + @_id + '/' + @name
+		return __meteor_runtime_config__.ROOT_URL_PATH_PREFIX + '/file-upload/' + @_id + '/' + @name
 
 Template.uploadedFilesList.events
 	'click .room-file-item': (e, t) ->
